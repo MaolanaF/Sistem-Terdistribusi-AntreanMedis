@@ -1,5 +1,7 @@
 #import library yang dibutuhkan
 import pika
+import uuid
+import json
 
 class RegistrationClient:
     def __init__(self):

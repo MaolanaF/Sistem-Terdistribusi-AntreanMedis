@@ -1,9 +1,14 @@
 #import library yang dibutuhkan
 import pika
 import json
+import os
 
 #Membuat koneksi antara  Python Anda dengan server RabbitMQ. 
-connection = pika.BlockingConnection(pika.ConnectionParameters('sister.southeastasia.cloudapp.azure.com'))
+amqp_url = os.environ['AMQP_URL']
+url_params = pika.URLParameters(amqp_url)
+
+credentials = pika.PlainCredentials('guest', 'guest')
+connection = pika.BlockingConnection(url_params)
 
 # Fungsi callback yang akan dipanggil setiap kali data pendaftaran diterima dari client
 def callback(ch, method, properties, body):

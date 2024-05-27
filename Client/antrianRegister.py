@@ -4,7 +4,7 @@ import pika
 class RegistrationClient:
     def __init__(self):
         #Inisialisasi Koneksi RabbitMQ menggunakan koneksi blocking dari library Pika
-        self.connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+        self.connection = pika.BlockingConnection(pika.ConnectionParameters('sister.southeastasia.cloudapp.azure.com'))
 
         #Pembuatan Channel yang nantinya digunakan untuk melakukan operasi seperti mendeklarasikan antrian dan mengirim pesan
         self.channel = self.connection.channel()

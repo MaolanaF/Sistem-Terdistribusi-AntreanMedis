@@ -3,7 +3,7 @@ import pika
 import json
 
 #Membuat koneksi antara  Python Anda dengan server RabbitMQ. 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+connection = pika.BlockingConnection(pika.ConnectionParameters('sister.southeastasia.cloudapp.azure.com'))
 
 # Fungsi callback yang akan dipanggil setiap kali data pendaftaran diterima dari client
 def callback(ch, method, properties, body):

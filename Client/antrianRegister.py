@@ -24,7 +24,7 @@ class RegistrationClient:
     def on_response(self, ch, method, properties, body):
         if self.correlation_id == properties.correlation_id:
             response = json.loads(body)
-            print("Nomor Antrean:", response['queue_number'])
+            print("Nomor Antrean:", response['queue_number']+1)
             print("Perkiraan Waktu:", response['estimated_time'])
 
     def select_clinic(self):
